@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>School news</title>
+    <style>
+        body {
+            background-color: yellow;
+        }
+        h2 {
+            font-size: 45px;
+        }
+        p.author {
+            font-style: italic;
+            font-size: 25px;
+        }
+        h1 {
+        text-align: center;
+        font-size: 55px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 15;
+            margin: 15;
+        }
+    </style>
+</head>
+<body>
+    <h1>School news</h1>
+    <ul>
+        {% for article in news_items %}
+            <li>
+                <h2>{{ article.title }}</h2>
+                <p class="author">{{ article.author }} - {{ article.date }}</p>
+                <p>{{ article.description }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
